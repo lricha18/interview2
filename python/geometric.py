@@ -3,6 +3,7 @@
 # Given a list (l) and a ratio (r), find the number of groups of 3 indices (i,j,k) in the list such that: 
 # 1. i < j < k
 # 2. {l[i], l[j], l[k]} is a geometric sequence with a common ratio r
+# i.e. r*l[i] == l[j], r*l[j] == l[k] 
 
 # Example:
 # l = [1,1,5,25,25,125,625]

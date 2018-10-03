@@ -10,6 +10,11 @@ There are 4 problems in total:
 - A Golang (1.10) problem (pointers, concurrency)
 - A VueJS problem (Javascript, Node, Vue Framework, single page applications)
 
-Every problem is challenging in its own way. We don't expect you to complete or attempt every problem (although you definitely can).
+Every problem is challenging in its own way. We don't expect you to complete or attempt every problem (although you're welcome too).
 
 During the interview, we will discuss the problems that have been attempted, and any challenges faced during implementation.
+
+Helpful Links:  
+- https://tour.golang.org/welcome/1
+- https://vuejs.org/v2/guide/
+- https://docs.python.org/3/

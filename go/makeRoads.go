@@ -18,6 +18,7 @@ import (
 // Hints:
 // - A linter might help, but there are some syntax erros here as well
 // - Road instantiation doesn't appear to be working. What could be the reason for that?
+// - You may need to pass in more information than is currently in this function
 func (r *Road) MakeRoad(c chan struct{}, wg *sync.WaitGroup) {
 	// release from the waitgroup later
 	defer wg.Done()

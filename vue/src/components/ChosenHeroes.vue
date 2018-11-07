@@ -43,8 +43,10 @@ export default {
   },
   methods: {
     addHero(name) {
-      this.chosenHeroes.push({ name });
-      this.chosenHero = null;
+      if(this.chosenHeroes.length<3){
+        this.chosenHeroes.push({ name });
+        this.chosenHero = null;
+      }
     },
 
     removeHero(hero) {

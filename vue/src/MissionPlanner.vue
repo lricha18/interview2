@@ -9,7 +9,7 @@
           :key="hero.name">
 
         <!-- to do: conditionally display this span -->
-        <span>✔ &nbsp;</span>
+        <span v-if= "hero.chosen">✔ &nbsp;</span>
 
         <span>{{ hero.name }}&nbsp;</span>
         <span class="edit"
@@ -39,13 +39,13 @@ export default {
   data() {
     return {
       heroes: [
-        { name: "Superman" },
-        { name: "Batman" },
-        { name: "Aquaman" },
-        { name: "Wonder Woman" },
-        { name: "Green Lantern" },
-        { name: "Martian Manhunter" },
-        { name: "Flash" }
+        { name: "Superman", chosen: false },
+        { name: "Batman", chosen: false},
+        { name: "Aquaman", chosen: false },
+        { name: "Wonder Woman", chosen: false },
+        { name: "Green Lantern", chosen: false },
+        { name: "Martian Manhunter", chosen: false },
+        { name: "Flash", chosen: false }
       ],
       newName: "",
       isEdit: false,

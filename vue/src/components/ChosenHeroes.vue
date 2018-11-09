@@ -5,7 +5,7 @@
       <option :value="null">Select a hero</option>
 
       <!-- available heroes -->
-      <option v-for="hero in heroes"
+      <option v-for="hero in heroes" v-if="!hero.chosen"
               :key="hero.name"
               :value="hero.name">
         {{ hero.name }}
@@ -46,11 +46,25 @@ export default {
       if(this.chosenHeroes.length<3){
         this.chosenHeroes.push({ name });
         this.chosenHero = null;
+        var i;
+        for(i = 0; i<this.heroes.length; i++){
+          if(this.heroes[i].name == name){
+            this.heroes[i].chosen = true;
+            break;
+          }
+        }
       }
     },
 
     removeHero(hero) {
       this.chosenHeroes = this.chosenHeroes.filter(h => h.name != hero.name);
+      var i;
+        for(i = 0; i<this.heroes.length; i++){
+          if(this.heroes[i].name == hero.name){
+            this.heroes[i].chosen = false;
+            break;
+          }
+        }
     }
   }
 };

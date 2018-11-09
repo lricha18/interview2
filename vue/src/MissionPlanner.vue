@@ -25,7 +25,7 @@
       <br>
       <span v-if="isEdit">enter to submit, click outside the box to cancel</span>
     </ul>
-    <ChosenHeroes :heroes="heroes" />
+    <ChosenHeroes ref="chosenHeroes" :heroes="heroes"/>
   </div>
 </template>
 
@@ -60,6 +60,8 @@ export default {
     },
 
     changeName() {
+      var oldName = this.heroToModify.name;
+      this.$refs.chosenHeroes.propogateName(oldName, this.newName);
       this.heroToModify.name = this.newName;
       this.isEdit = false;
     },

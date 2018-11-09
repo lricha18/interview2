@@ -31,6 +31,7 @@
 import Hero from "./Hero";
 
 export default {
+
   components: {
     Hero
   },
@@ -55,19 +56,30 @@ export default {
         }
       }
     },
-
+    propogateName: function(oldname, newName){
+      var i;
+      for(i = 0; i<this.heroes.length; i++){
+        if(this.chosenHeroes[i].name == oldname){
+          this.chosenHeroes[i].name = newName;
+          break;
+        }
+      }
+    },
     removeHero(hero) {
       this.chosenHeroes = this.chosenHeroes.filter(h => h.name != hero.name);
       var i;
-        for(i = 0; i<this.heroes.length; i++){
-          if(this.heroes[i].name == hero.name){
-            this.heroes[i].chosen = false;
-            break;
-          }
+      for(i = 0; i<this.heroes.length; i++){
+        if(this.heroes[i].name == hero.name){
+          this.heroes[i].chosen = false;
+          break;
         }
+      }
     }
   }
 };
+
+
+
 </script>
 
 <style scoped>

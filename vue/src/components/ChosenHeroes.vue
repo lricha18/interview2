@@ -14,6 +14,8 @@
     <span>&nbsp;</span>
     <button @click="addHero(chosenHero)"
             :disabled="chosenHero === null">Add Hero</button>
+    <button @click="startMission()"
+            >Start Mission</button>
     <br>
     <h3>Chosen Heroes</h3>
     <div class="chosen-heroes">
@@ -56,7 +58,7 @@ export default {
         }
       }
     },
-    propogateName: function(oldname, newName){
+    propogateName(oldname, newName){
       var i;
       for(i = 0; i<this.heroes.length; i++){
         if(this.chosenHeroes[i].name == oldname){
@@ -73,6 +75,14 @@ export default {
           this.heroes[i].chosen = false;
           break;
         }
+      }
+    },
+    startMission(){
+      if(this.chosenHeroes.length!=3){
+        alert("We need three heroes");
+      }
+      else{
+        alert("Mission Complete");
       }
     }
   }
